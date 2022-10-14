@@ -16,7 +16,7 @@ onMounted(() => {
 
 const initThree = () => {
   const scene = new THREE.Scene();
-  const canvas = document.querySelector("#three");
+  const canvas = document.querySelector("#three") as HTMLCanvasElement;
   const renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
@@ -55,7 +55,7 @@ const initThree = () => {
         map: explosionTexture,
       });
       //给模型每部分上材质
-      o.material = material;
+      (o as THREE.Mesh).material = material;
     });
 
     scene.add(model);
@@ -75,7 +75,7 @@ const initThree = () => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
 
-    const resizeRendererToDisplaySize = (renderer) => {
+    const resizeRendererToDisplaySize = (renderer: THREE.WebGLRenderer) => {
       const canvas = renderer.domElement;
       var width = window.innerWidth;
       var height = window.innerHeight;
