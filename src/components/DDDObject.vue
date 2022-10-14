@@ -9,6 +9,7 @@ import { onMounted } from "vue";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { createConditionalExpression } from "@vue/compiler-core";
 
 onMounted(() => {
   initThree();
@@ -38,6 +39,7 @@ const initThree = () => {
   animate();
 
   const gltfLoader = new GLTFLoader();
+  console.log(`${import.meta.env.BASE_URL}shiba/scene.gltf`)
   gltfLoader.load(`${import.meta.env.BASE_URL}/shiba/scene.gltf`, (gltf) => {
     let model = gltf.scene;
 
@@ -46,7 +48,7 @@ const initThree = () => {
     model.traverse((o) => {
       //将图片作为纹理加载
       let explosionTexture = new THREE.TextureLoader().load(
-        `${import.meta.env.BASE_URL}/shiba/textures/default_baseColor.png`
+        `${import.meta.env.BASE_URL}shiba/textures/default_baseColor.png`
       );
       //调整纹理图的方向
       explosionTexture.flipY = false;
