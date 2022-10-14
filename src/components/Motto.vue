@@ -1,7 +1,7 @@
 <template>
   <div
-    class="bg-gray-600/[.4] rounded-lg text-center text-white p-3 backdrop-blur"
+    class="z-10 rounded-lg bg-gray-600/[.4] p-3 text-center text-white backdrop-blur"
   >
-    Iiiiiiiiiiii
+    Hello! I'm a #$%^&*()(*&^%$%^&*(*&^%$%^&*&^%$%^&))
   </div>
 </template>

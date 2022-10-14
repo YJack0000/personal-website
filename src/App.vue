@@ -1,12 +1,18 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
+import NavbarView from "./views/NavbarView.vue";
+import AboutView from "./views/AboutView.vue";
+import NameView from "./views/NameView.vue";
+import WorkView from "./views/WorkView.vue";
+import BioView from "./views/BioView.vue";
 </script>
 
 <template>
-  <main class="h-screen bg-zinc-800">
-    <Navbar></Navbar>
-    <RouterView />
+  <NavbarView />
+  <main class="mr-auto ml-auto h-screen w-full max-w-xl pt-12">
+    <NameView />
+    <AboutView />
+    <WorkView />
+    <BioView />
   </main>
 </template>
 
